@@ -47,6 +47,11 @@ Feature: The Internet
       | Status Codes                                 |
       | Typos                                        |
       | WYSIWYG Editor                               |
+#      | Checkboxes                                   |
+#      | Frames                                       |
+#      | Hovers                                       |
+#      | JQuery UI Menus                              |
+#  free entries above are missing from expected list
 
 #  @TEST_TI_0001
 #  Scenario: Basic Auth allows validated access

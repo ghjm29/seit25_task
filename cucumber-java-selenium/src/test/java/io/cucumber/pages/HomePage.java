@@ -18,7 +18,7 @@ public class HomePage extends BasePage {
   @FindBy(xpath = "//h2[text()='Available Examples']")
   private WebElement availExampleHeadingEli;
 
-  @FindBy(xpath = "//*[@id='content']/ul/li/a")
+  @FindBy(xpath = "//*[@id='content']/ul/li")
   private List<WebElement> exampleLinksEli;
 
   public void navigateToHomePage(String url){
