@@ -4,9 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class Home extends Page {
+public class HomePage extends BasePage {
 
-  public Home(ChromeDriver driver) {
+  public HomePage(ChromeDriver driver) {
     super(driver);
     System.out.println("Homepage title is : " + getTitle().getText());
   }

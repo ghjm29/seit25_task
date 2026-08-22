@@ -4,9 +4,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.core.Context;
 import io.cucumber.core.Manager;
 
-public class Home extends Context {
+public class HomeSteps extends Context {
 
-  public Home(Manager manager) {
+  public HomeSteps(Manager manager) {
     super(manager);
   }
 

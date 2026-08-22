@@ -5,11 +5,11 @@ import java.time.Duration;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class Page {
+public class BasePage {
 
   protected ChromeDriver driver;
 
-  public Page(ChromeDriver driver) {
+  public BasePage(ChromeDriver driver) {
     this.driver = driver;
     PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(5)), this);
     waitForPageLoad();
