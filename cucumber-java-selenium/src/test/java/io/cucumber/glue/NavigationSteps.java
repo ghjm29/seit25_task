@@ -1,8 +1,13 @@
 package io.cucumber.glue;
 
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.core.Context;
 import io.cucumber.core.Manager;
+import io.cucumber.java.en.Then;
+
+import java.util.List;
 
 public class NavigationSteps extends Context {
 
