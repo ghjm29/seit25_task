@@ -4,7 +4,10 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.core.Context;
 import io.cucumber.core.Manager;
+import io.cucumber.core.TestEnvironment;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.cucumber.pages.BasicAuthPage;
 import io.cucumber.pages.HomePage;
 
 import java.util.ArrayList;
@@ -52,6 +55,27 @@ public class HomeSteps extends Context {
             missingLinks.isEmpty() && unexpectedLinks.isEmpty(),
             "Missing links: " + missingLinks
                     + "; Unexpected links: " + unexpectedLinks
+    );
+  }
+
+  @When("the {string} example is opened with username from {string} and password from {string}")
+  public void basicAuthExampleIsOpenedWithUsernameAndPassword(
+          String exampleName,
+          String usernameKey,
+          String passwordKey
+  ) {
+    String username = TestEnvironment.get(usernameKey);
+    String password = TestEnvironment.get(passwordKey);
+    homePage.openBasicAuth(exampleName, username, password);
+  }
+
+  @Then("{string} should be displayed")
+  public void congratulationsShouldBeDisplayed(String expectedMsg) {
+    BasicAuthPage basicAuthPage = new BasicAuthPage(manager.getDriver());
+
+    assertTrue(
+            basicAuthPage.waitForConfMsg().contains(expectedMsg),
+            expectedMsg + " was not displayed"
     );
   }
 
