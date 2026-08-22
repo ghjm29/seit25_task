@@ -2,4 +2,5 @@
 *.iml
 
 cucumber-java-selenium/target/
+cucumber-java-selenium/.env
 *.versionsBackup
