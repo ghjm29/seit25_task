@@ -15,7 +15,7 @@ public class SortableDataTablesPage extends BasePage {
 
   public List<List<String>> getTableResults(String tableName) {
 
-    By tableRows = By.xpath("//h4[text()='" + tableName + "']/following-sibling::table[@id='table1']/tbody/tr");
+    By tableRows = By.xpath("//h4[text()='" + tableName + "']/following-sibling::table[1]/tbody/tr");
     List<WebElement> tableRowsEli = wait.until(
         ExpectedConditions.visibilityOfAllElementsLocatedBy(tableRows));
 
