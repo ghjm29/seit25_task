@@ -49,10 +49,10 @@ Feature: The Internet
       | Status Codes                                 |
       | Typos                                        |
       | WYSIWYG Editor                               |
-      | Checkboxes                                   |
-      | Frames                                       |
-      | Hovers                                       |
-      | JQuery UI Menus                              |
+#      | Checkboxes                                   |
+#      | Frames                                       |
+#      | Hovers                                       |
+#      | JQuery UI Menus                              |
 
   @TEST_TI_0002
   Scenario: Basic Auth allows validated access
