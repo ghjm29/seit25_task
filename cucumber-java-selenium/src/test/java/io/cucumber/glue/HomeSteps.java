@@ -25,11 +25,6 @@ public class HomeSteps extends Context {
     super(manager);
   }
 
-  @Given("an example Home Page step")
-  public void exampleHomePageStep() {
-    System.out.println("printing shared stash :" + getTestStash().toString());
-  }
-
   @Given("the {string} homepage is open")
   public void homePageIsOpen(String url){
     homePage = new HomePage(manager.getDriver());

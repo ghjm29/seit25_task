@@ -20,15 +20,6 @@ public class BasePage {
     this.driver = driver;
     this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(5)), this);
-    waitForPageLoad();
-  }
-
-  public void waitForPageLoad() {
-    try {
-      Thread.sleep(Duration.ofSeconds(5));
-    } catch (InterruptedException e) {
-      throw new RuntimeException(e);
-    }
   }
 
   protected void waitUntilElementVisible(WebElement eli){
