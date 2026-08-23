@@ -4,6 +4,8 @@ Feature: The Internet
   Background:
     Given the 'https://the-internet.herokuapp.com' homepage is open
 
+   #Scenario with the provided expected resutls currently fail, need to add the commented data below
+   #for this test to pass
   @TEST_TI_0001
   Scenario: Homepage has a list of links to Expected examples
     Then homepage should display the following links
@@ -47,18 +49,15 @@ Feature: The Internet
       | Status Codes                                 |
       | Typos                                        |
       | WYSIWYG Editor                               |
-#      | Checkboxes                                   |
-#      | Frames                                       |
-#      | Hovers                                       |
-#      | JQuery UI Menus                              |
-#  free entries above are missing from expected list
-
+      | Checkboxes                                   |
+      | Frames                                       |
+      | Hovers                                       |
+      | JQuery UI Menus                              |
 
   @TEST_TI_0002
   Scenario: Basic Auth allows validated access
     When the 'Basic Auth' example is opened with username from 'test_user' and password from 'test_password'
     Then 'Congratulations' should be displayed
-
 
   @TEST_TI_0003
   Scenario: Sortable Data Tables - Example 1 displays the expected 4 results
