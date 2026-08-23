@@ -15,9 +15,6 @@ public class HomePage extends BasePage {
     super(driver);
   }
 
-  @FindBy(css = "h1")
-  private WebElement title;
-
   @FindBy(xpath = "//h2[text()='Available Examples']")
   private WebElement availExampleHeadingEli;
 
@@ -50,14 +47,5 @@ public class HomePage extends BasePage {
   public void openBasicAuth(String exampleName, String username, String password) {
     ((HasAuthentication) driver).register(UsernameAndPassword.of(username, password));
     openExample(exampleName);
-  }
-
-  public WebElement getTitle() {
-    return title;
-  }
-
-  public void refresh() {
-    driver.navigate().refresh();
-    System.out.println("Refreshed page");
   }
 }
