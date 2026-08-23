@@ -9,10 +9,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.pages.BasicAuthPage;
 import io.cucumber.pages.HomePage;
+import io.cucumber.pages.SortableDataTablesPage;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HomeSteps extends Context {
@@ -67,6 +69,22 @@ public class HomeSteps extends Context {
     String username = TestEnvironment.get(usernameKey);
     String password = TestEnvironment.get(passwordKey);
     homePage.openBasicAuth(exampleName, username, password);
+  }
+
+  @When("the {string} example is opened")
+  public void exampleIsOpened(String exampleName) {
+    homePage.openExample(exampleName);
+  }
+
+  @Then("{string} table should display the following results")
+  public void tableShouldDisplayTheFollowingResults(String tableName, DataTable dt) {
+    List<List<String>> expectedResults = new ArrayList<>(dt.asLists(String.class));
+    expectedResults.removeFirst();
+
+    SortableDataTablesPage sortableDataTablesPage = new SortableDataTablesPage(manager.getDriver());
+    List<List<String>> actualResults = sortableDataTablesPage.getTableResults(tableName);
+
+    assertIterableEquals(expectedResults, actualResults);
   }
 
   @Then("{string} should be displayed")
